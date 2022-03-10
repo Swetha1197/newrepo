@@ -1,0 +1,9 @@
+({
+handleInit: function (component, event, helper){
+var CaseID = null;
+var pageRef = component.get('v.pageReference');
+var base64Context = pageRef.state.inContextOfRef;
+var base64Context = pageRef.state.inContextOfRef;
+var regex=new RegExp("(1\.([^&#]*)|&|#|$)");
+var context = decodeURIComponent(regex.exec(base64Context)[2].replace(/\+/g, " "));
+context= JSON.parse(window.atob(context))
